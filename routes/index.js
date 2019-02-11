@@ -9,6 +9,15 @@ var sequelize = new Sequelize({
 });
 var async = require('async');
 
+router.get('/?', (req, res, next) => {
+	let url = "https://api.ngs.nfl.com/league/schedule?season=2018&seasonType=REG";
+
+	Request({
+		"headers": {"content-type": "application/json"},
+		"url": url
+	}, (error, response, body) => { handleResponse(body, req, res, renderByeWeeks); });
+});
+
 router.get('/:year(\\d{4})/?:team(\\w+)?', (req, res, next) => {
 	let year = 2018;
 	if (req.params.year) {

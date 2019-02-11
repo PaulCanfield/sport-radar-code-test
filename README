@@ -1,0 +1,35 @@
+Setup:
+
+    Set Permissions: Application needs write access to file database/database.sqlite
+
+    Install Node Modules: Run npm install
+
+    Start application: app.js is entry point, use npm start or nodeamon app.js or anything.
+
+    Navigate to site url: http://localhost:3000
+
+Routes:
+    List of Bye Weeks by team:
+        /
+        /yyyy
+        /yyyy/alias
+
+        Example:
+            /2017/Vikings
+            /2016/
+
+    Average Points since Bye Week, accessible by quarter
+        /alias
+        /alias/q1
+        /alias/q2
+        /alias/q3
+        /alias/q4
+        /alias/ot
+        /alias/all
+        /alias/yyyy/q#
+
+        Example:
+            /Vikings
+            /Vikings/2017/q1
+            /Vikings/ot
+            /Vikings/2016/all
